@@ -1,88 +1,311 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialité – Whizpee</title>
+  <title>Privacy Policy – Whizpee</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* --- Styles globaux --- */
+    :root {
+      --primary: #0078ff;
+      --secondary: #00c6ff;
+      --accent: #ff6b6b;
+      --light: #f3f6fa;
+      --dark: #333;
+      --text: #444;
+      --success: #28a745;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f3f6fa;
-      color: #333;
+      background: var(--light);
+      color: var(--text);
+      scroll-behavior: smooth;
     }
 
     header {
-      background: linear-gradient(135deg, #0078ff, #00c6ff);
-      color: #fff;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 60px 20px;
       text-align: center;
       border-bottom-left-radius: 40px;
       border-bottom-right-radius: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+    
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 100px;
+      height: 100px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.2em;
-      font-weight: bold;
+      font-size: 2.5em;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
     }
 
-    main {
+    header p {
+      margin-top: 15px;
+      font-size: 1.2em;
+      font-weight: 400;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .last-updated {
+      margin-top: 10px;
+      font-size: 0.9em;
+      opacity: 0.9;
+      display: inline-block;
+      background: rgba(0,0,0,0.2);
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .container {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
     }
-
-    section {
-      background: #fff;
-      margin-bottom: 30px;
+    
+    .toc {
+      background: white;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+    
+    .toc h2 {
+      margin-bottom: 15px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+    }
+    
+    .toc li {
+      margin-bottom: 10px;
+      break-inside: avoid;
+    }
+    
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    
+    .toc a:hover {
+      background: var(--light);
+      color: var(--primary);
+      transform: translateX(5px);
+    }
+    
+    .toc i {
+      color: var(--secondary);
+      font-size: 0.9em;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 30px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: 12px 0 0 12px;
     }
 
     section:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
 
     h2 {
       margin-top: 0;
-      color: #0078ff;
-      font-size: 1.4em;
-      border-left: 5px solid #00c6ff;
-      padding-left: 10px;
+      color: var(--primary);
+      font-size: 1.5em;
+      padding-left: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    h2 i {
+      color: var(--secondary);
     }
 
     ul, ol {
       margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    
+    li {
+      margin-bottom: 8px;
+      position: relative;
+    }
+    
+    ul li::marker {
+      color: var(--secondary);
+    }
+    
+    ol li::marker {
+      color: var(--primary);
+      font-weight: bold;
     }
 
     p {
-      margin: 10px 0;
+      margin: 15px 0;
+      line-height: 1.7;
+    }
+    
+    .highlight {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+      margin: 20px 0;
+    }
+    
+    .permission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .permission-card {
+      background: var(--light);
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    
+    .permission-card:hover {
+      transform: translateY(-3px);
+    }
+    
+    .permission-card i {
+      font-size: 2em;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    .permission-card h3 {
+      margin: 10px 0 5px;
+      color: var(--dark);
     }
 
     a {
-      color: #0078ff;
+      color: var(--primary);
       font-weight: 600;
       text-decoration: none;
+      transition: color 0.2s ease;
     }
 
     a:hover {
+      color: var(--secondary);
       text-decoration: underline;
+    }
+
+    .btn-delete {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 15px;
+      padding: 14px 24px;
+      background: var(--accent);
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+    }
+
+    .btn-delete:hover {
+      background: #e03e3f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(255, 107, 107, 0.4);
+      text-decoration: none;
+    }
+    
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: var(--light);
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    
+    .contact-info i {
+      font-size: 1.5em;
+      color: var(--primary);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #0078ff;
-      color: #fff;
-      margin-top: 40px;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      margin-top: 60px;
       border-top-left-radius: 40px;
       border-top-right-radius: 40px;
     }
@@ -90,86 +313,165 @@
     footer p {
       margin: 5px 0;
     }
+    
+    .footer-tagline {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    
+    .footer-tagline span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
-    /* Mobile responsive */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       header h1 {
-        font-size: 1.6em;
+        font-size: 2em;
       }
+      
+      .toc ul {
+        columns: 1;
+      }
+      
       section {
         padding: 20px;
+      }
+      
+      .permission-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header {
+        padding: 40px 15px;
+      }
+      
+      header h1 {
+        font-size: 1.8em;
+      }
+      
+      header p {
+        font-size: 1em;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Politique de confidentialité – Whizpee</h1>
-    <p>Protection et transparence de vos données personnelles</p>
+    <h1>Privacy Policy – Whizpee</h1>
+    <p>Your privacy matters: transparent data protection for your peace of mind</p>
+    <div class="last-updated">Last updated: January 2025</div>
   </header>
 
-  <main>
-    <section>
-      <h2>Informations que nous collectons</h2>
-      <p>Lorsque vous utilisez Whizpee, nous pouvons collecter les informations suivantes :</p>
+  <div class="container">
+    <div class="toc">
+      <h2><i class="fas fa-list"></i> Table of Contents</h2>
       <ul>
-        <li>Votre nom, adresse e-mail et photo de profil (si vous choisissez de les fournir)</li>
-        <li>L’adresse IP de votre appareil et d’autres informations techniques</li>
-        <li>Votre localisation (si vous choisissez de la partager)</li>
+        <li><a href="#info-collected"><i class="fas fa-database"></i> Information We Collect</a></li>
+        <li><a href="#info-usage"><i class="fas fa-cogs"></i> How We Use Your Information</a></li>
+        <li><a href="#permissions"><i class="fas fa-key"></i> Permissions</a></li>
+        <li><a href="#data-storage"><i class="fas fa-shield-alt"></i> Data Storage & Security</a></li>
+        <li><a href="#data-sharing"><i class="fas fa-share-alt"></i> Data Sharing</a></li>
+        <li><a href="#account-deletion"><i class="fas fa-user-times"></i> Account & Data Deletion</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+
+    <section id="info-collected">
+      <h2><i class="fas fa-database"></i> Information We Collect</h2>
+      <p>When you use Whizpee, we may collect the following information to provide and improve our services:</p>
+      <ul>
+        <li>Your name, email address, and profile picture (if you choose to provide them)</li>
+        <li>Your device's IP address and related technical information</li>
+        <li>Your location data (only if you explicitly choose to share it)</li>
+      </ul>
+      <div class="highlight">
+        <p><i class="fas fa-info-circle"></i> <strong>Transparency Note:</strong> We only collect information necessary to deliver our services and never without your explicit consent.</p>
+      </div>
+    </section>
+
+    <section id="info-usage">
+      <h2><i class="fas fa-cogs"></i> How We Use Your Information</h2>
+      <p>Your data helps us provide you with a seamless and personalized experience. Specifically, we use your information to:</p>
+      <ul>
+        <li>Deliver our chat and content sharing services effectively</li>
+        <li>Continuously improve the application and develop new features</li>
+        <li>Communicate with you regarding notifications, support, and updates</li>
+        <li>Fulfill our legal obligations and maintain security</li>
       </ul>
     </section>
 
-    <section>
-      <h2>Comment nous utilisons vos informations</h2>
-      <ul>
-        <li>Fournir les services de chat et de partage de contenu</li>
-        <li>Améliorer l’application et ses fonctionnalités</li>
-        <li>Communiquer avec vous (notifications, support, mises à jour)</li>
-        <li>Respecter nos obligations légales</li>
-      </ul>
+    <section id="permissions">
+      <h2><i class="fas fa-key"></i> Permissions</h2>
+      <p>To provide full functionality, Whizpee may request access to:</p>
+      <div class="permission-grid">
+        <div class="permission-card">
+          <i class="fas fa-hdd"></i>
+          <h3>Storage</h3>
+          <p>Send and receive files and media</p>
+        </div>
+        <div class="permission-card">
+          <i class="fas fa-microphone"></i>
+          <h3>Microphone</h3>
+          <p>Enable voice conversations</p>
+        </div>
+        <div class="permission-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Location</h3>
+          <p>Share your position when enabled</p>
+        </div>
+      </div>
+      <p>You can manage these permissions at any time through your device settings.</p>
     </section>
 
-    <section>
-      <h2>Autorisations</h2>
-      <p>Whizpee peut demander l’accès à :</p>
-      <ul>
-        <li><b>Stockage</b> : envoyer et recevoir des fichiers et médias</li>
-        <li><b>Microphone</b> : utiliser les conversations vocales</li>
-        <li><b>Localisation</b> : partager votre position si vous l’activez</li>
-      </ul>
+    <section id="data-storage">
+      <h2><i class="fas fa-shield-alt"></i> Data Storage & Security</h2>
+      <p>All data transmitted or received through Whizpee is stored on our secure servers. We employ industry-standard encryption technologies and organizational measures to protect your information against unauthorized access, loss, or misuse.</p>
+      <div class="highlight">
+        <p><i class="fas fa-lock"></i> <strong>Security Commitment:</strong> We regularly update our security practices and conduct audits to ensure your data remains protected.</p>
+      </div>
     </section>
 
-    <section>
-      <h2>Stockage et sécurité des données</h2>
-      <p>Toutes les données envoyées ou reçues via Whizpee sont stockées sur nos serveurs sécurisés. 
-      Nous utilisons des techniques de chiffrement et des mesures organisationnelles afin de protéger vos données contre tout accès non autorisé, perte ou mauvaise utilisation.</p>
+    <section id="data-sharing">
+      <h2><i class="fas fa-share-alt"></i> Data Sharing</h2>
+      <p>We respect your privacy and do not share your personal data with third parties, except when required by law or necessary to provide our services to you.</p>
     </section>
 
-    <section>
-      <h2>Partage des données</h2>
-      <p>Nous ne partageons pas vos données personnelles avec des tiers, sauf si la loi l’exige ou si cela est nécessaire pour fournir nos services.</p>
-    </section>
-
-    <section>
-      <h2>Suppression de compte et de données</h2>
-      <p>Vous pouvez demander la suppression de votre compte Whizpee et des données associées à tout moment :</p>
+    <section id="account-deletion">
+      <h2><i class="fas fa-user-times"></i> Account & Data Deletion</h2>
+      <p>You have the right to request deletion of your Whizpee account and associated data at any time:</p>
       <ol>
-        <li>Depuis l’application : <i>Paramètres → Compte → Supprimer mon compte</i> (si disponible)</li>
-        <li>Ou par e-mail à : <a href="mailto:support@whizpee.com">support@whizpee.com</a></li>
+        <li>Through the application: <i>Settings → Account → Delete My Account</i> (if available)</li>
+        <li>Or by clicking the button below to send an automatic email request:</li>
       </ol>
-      <p>Après confirmation, nous supprimerons définitivement vos données dans un délai maximum de <b>30 jours</b>, sauf obligation légale de conservation.</p>
+      <a class="btn-delete" href="mailto:support@whizpee.com?subject=Account%20Deletion%20Request">
+        <i class="fas fa-trash-alt"></i> Request Account Deletion
+      </a>
+      <p>After confirmation, we will permanently delete your data within a maximum of <b>30 days</b>, except where legal obligations require us to retain certain information.</p>
     </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Pour toute question concernant cette politique, vous pouvez nous écrire à :</p>
-      <p>📧 <a href="mailto:contact@whizpee.com">contact@whizpee.com</a></p>
+    <section id="contact">
+      <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+      <p>For any questions regarding this privacy policy or your data, please don't hesitate to reach out to us:</p>
+      <div class="contact-info">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:contact@whizpee.com">contact@whizpee.com</a>
+      </div>
+      <p>We typically respond to all inquiries within 24-48 hours.</p>
     </section>
-  </main>
+  </div>
 
   <footer>
-    <p>&copy; 2025 Whizpee. Tous droits réservés.</p>
-    <p>Confiance • Sécurité • Transparence</p>
+    <p>&copy; 2025 Whizpee. All rights reserved.</p>
+    <div class="footer-tagline">
+      <span><i class="fas fa-handshake"></i> Trust</span>
+      <span><i class="fas fa-shield-alt"></i> Security</span>
+      <span><i class="fas fa-eye"></i> Transparency</span>
+    </div>
   </footer>
 </body>
 </html>
