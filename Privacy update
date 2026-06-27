@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité – MikaFood</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #e85d3a;
+      --secondary: #f9a825;
+      --accent: #ff6b6b;
+      --light: #fef8f5;
+      --dark: #2d2d2d;
+      --text: #4a4a4a;
+      --success: #28a745;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+      line-height: 1.7;
+      background: var(--light);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 20px rgba(232, 93, 58, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '\f2e7';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      top: -40px;
+      right: -20px;
+      font-size: 120px;
+      opacity: 0.12;
+      color: white;
+      transform: rotate(12deg);
+    }
+
+    header::after {
+      content: '\f2e7';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      bottom: -50px;
+      left: -30px;
+      font-size: 100px;
+      opacity: 0.08;
+      color: white;
+      transform: rotate(-8deg);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.7em;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -0.5px;
+    }
+
+    header h1 i {
+      margin-right: 8px;
+      color: var(--light);
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 1.2em;
+      font-weight: 400;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+      opacity: 0.95;
+    }
+
+    .last-updated {
+      margin-top: 12px;
+      font-size: 0.9em;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 6px 18px;
+      border-radius: 30px;
+      display: inline-block;
+      backdrop-filter: blur(4px);
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .toc {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      margin-bottom: 35px;
+      border: 1px solid rgba(232, 93, 58, 0.10);
+    }
+
+    .toc h2 {
+      margin-bottom: 16px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.4em;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      column-gap: 30px;
+    }
+
+    .toc li {
+      margin-bottom: 10px;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      background: var(--light);
+      color: var(--primary);
+      transform: translateX(6px);
+    }
+
+    .toc i {
+      color: var(--secondary);
+      font-size: 0.95em;
+      width: 20px;
+      text-align: center;
+    }
+
+    section {
+      background: white;
+      margin-bottom: 30px;
+      padding: 30px 35px;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      border-left: 6px solid transparent;
+      border-image: linear-gradient(to bottom, var(--primary), var(--secondary)) 1;
+    }
+
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(232, 93, 58, 0.12);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.6em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-left: 0;
+      margin-bottom: 18px;
+    }
+
+    h2 i {
+      color: var(--secondary);
+      font-size: 1.1em;
+    }
+
+    h3 {
+      color: var(--dark);
+      margin: 20px 0 10px;
+      font-size: 1.2em;
+    }
+
+    ul,
+    ol {
+      margin-left: 20px;
+      margin-bottom: 18px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    ul li::marker {
+      color: var(--secondary);
+    }
+
+    ol li::marker {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    p {
+      margin: 14px 0;
+      line-height: 1.8;
+    }
+
+    .highlight {
+      background: #fff1eb;
+      padding: 18px 22px;
+      border-radius: 10px;
+      border-left: 5px solid var(--primary);
+      margin: 22px 0;
+    }
+
+    .highlight i {
+      color: var(--primary);
+      margin-right: 6px;
+    }
+
+    .highlight-success {
+      background: #e8f5e9;
+      border-left-color: var(--success);
+    }
+
+    .permission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      margin: 20px 0 15px;
+    }
+
+    .permission-card {
+      background: var(--light);
+      padding: 18px 12px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.2s ease, background 0.2s;
+      border: 1px solid rgba(232, 93, 58, 0.08);
+    }
+
+    .permission-card:hover {
+      transform: translateY(-4px);
+      background: #fff5ef;
+    }
+
+    .permission-card i {
+      font-size: 2.4em;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .permission-card h4 {
+      margin: 8px 0 4px;
+      color: var(--dark);
+      font-size: 1.1em;
+    }
+
+    .permission-card p {
+      font-size: 0.9em;
+      margin: 4px 0 0;
+      color: #666;
+    }
+
+    .third-party-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .third-party-card {
+      background: var(--light);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+    }
+
+    .third-party-card h4 {
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .third-party-card p {
+      font-size: 0.95em;
+      margin: 4px 0;
+      color: #555;
+    }
+
+    a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+
+    .btn-delete {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(255, 107, 107, 0.35);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-delete:hover {
+      background: #d94a4a;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 107, 107, 0.45);
+      text-decoration: none;
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--light);
+      padding: 14px 22px;
+      border-radius: 10px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .contact-info i {
+      font-size: 1.6em;
+      color: var(--primary);
+    }
+
+    .contact-info a {
+      font-size: 1.1em;
+    }
+
+    .badge-google {
+      display: inline-block;
+      background: #1a73e8;
+      color: white;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      margin-top: 60px;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    .footer-tagline {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 16px;
+    }
+
+    .footer-tagline span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      .toc ul {
+        columns: 1;
+      }
+      section {
+        padding: 22px 20px;
+      }
+      .permission-grid {
+        grid-template-columns: 1fr;
+      }
+      .container {
+        padding: 0 14px;
+      }
+      .third-party-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 40px 15px;
+      }
+      header h1 {
+        font-size: 1.6em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .btn-delete {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-utensils"></i> MikaFood – Confidentialité</h1>
+    <p>Vos données sont entre de bonnes mains : transparence, sécurité et contrôle pour chaque commande</p>
+    <div class="last-updated">Dernière mise à jour : 27 juin 2026</div>
+  </header>
+
+  <div class="container">
+
+    <!-- Table des matières -->
+    <div class="toc">
+      <h2><i class="fas fa-list-ul"></i> Sommaire</h2>
+      <ul>
+        <li><a href="#intro"><i class="fas fa-info-circle"></i> Introduction</a></li>
+        <li><a href="#info-collected"><i class="fas fa-database"></i> Données collectées</a></li>
+        <li><a href="#legal-basis"><i class="fas fa-gavel"></i> Base légale</a></li>
+        <li><a href="#info-usage"><i class="fas fa-cogs"></i> Utilisation</a></li>
+        <li><a href="#third-parties"><i class="fas fa-handshake"></i> Tiers</a></li>
+        <li><a href="#permissions"><i class="fas fa-key"></i> Permissions</a></li>
+        <li><a href="#cookies"><i class="fas fa-cookie-bite"></i> Cookies</a></li>
+        <li><a href="#data-storage"><i class="fas fa-shield-alt"></i> Stockage &amp; sécurité</a></li>
+        <li><a href="#retention"><i class="fas fa-clock"></i> Conservation</a></li>
+        <li><a href="#user-rights"><i class="fas fa-user-check"></i> Vos droits</a></li>
+        <li><a href="#children"><i class="fas fa-child"></i> Enfants</a></li>
+        <li><a href="#international"><i class="fas fa-globe"></i> Transferts</a></li>
+        <li><a href="#account-deletion"><i class="fas fa-user-times"></i> Suppression</a></li>
+        <li><a href="#updates"><i class="fas fa-edit"></i> Mises à jour</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <section id="intro">
+      <h2><i class="fas fa-info-circle"></i> Introduction <span class="badge-google">Conforme Google Play</span></h2>
+      <p><strong>MikaFood</strong> (ci-après « nous », « notre » ou « l’Application ») est une plateforme de livraison de repas. La présente politique de confidentialité décrit comment nous collectons, utilisons, partageons et protégeons vos données personnelles lorsque vous utilisez notre application.</p>
+      <p>Cette politique est en <strong>totale cohérence</strong> avec le formulaire <strong>« Sécurité des données » (Data Safety)</strong> de Google Play. Nous nous engageons à respecter le <strong>RGPD</strong> (Règlement Général sur la Protection des Données) ainsi que les lois applicables, notamment le <strong>CCPA</strong> (California Consumer Privacy Act) pour nos utilisateurs résidant aux États-Unis.</p>
+      <div class="highlight highlight-success">
+        <p><i class="fas fa-check-circle"></i> <strong>Notre engagement :</strong> Nous ne collectons que les données strictement nécessaires au fonctionnement du service. Vous gardez le contrôle total sur vos informations.</p>
+      </div>
+    </section>
+
+    <!-- 1. DONNÉES COLLECTÉES -->
+    <section id="info-collected">
+      <h2><i class="fas fa-database"></i> Données que nous collectons</h2>
+      <p>Pour assurer le bon déroulement de vos commandes et améliorer votre expérience, MikaFood collecte les catégories suivantes :</p>
+
+      <h3><i class="fas fa-user-circle"></i> Données d'identification et de contact</h3>
+      <ul>
+        <li><strong>Nom, prénom</strong> – pour personnaliser votre profil et vos commandes.</li>
+        <li><strong>Adresse e-mail</strong> – pour vous envoyer les confirmations de commande, les reçus et les communications importantes.</li>
+        <li><strong>Numéro de téléphone</strong> – pour permettre aux livreurs de vous contacter en cas de besoin et pour sécuriser votre compte.</li>
+        <li><strong>Adresse(s) de livraison</strong> – indispensables pour acheminer vos repas.</li>
+      </ul>
+
+      <h3><i class="fas fa-history"></i> Données de transaction et d'utilisation</h3>
+      <ul>
+        <li><strong>Historique des commandes</strong> – les restaurants, plats, montants, notes et commentaires.</li>
+        <li><strong>Préférences alimentaires</strong> – si vous les renseignez (allergies, régimes particuliers).</li>
+        <li><strong>Données de paiement</strong> – nous ne stockons <strong>jamais</strong> vos numéros de carte bancaire. Les paiements sont traités par nos partenaires sécurisés (Stripe, PayPal). Nous conservons uniquement un identifiant de transaction.</li>
+      </ul>
+
+      <h3><i class="fas fa-map-marked-alt"></i> Données de localisation</h3>
+      <ul>
+        <li><strong>Localisation précise</strong> (avec votre consentement explicite) – pour suivre votre livreur en temps réel et vous suggérer des restaurants à proximité.</li>
+        <li><strong>Localisation approximative</strong> (déduite de votre adresse IP) – pour l'affichage de la carte et les statistiques régionales.</li>
+      </ul>
+
+      <h3><i class="fas fa-mobile-alt"></i> Données techniques et d'appareil</h3>
+      <ul>
+        <li><strong>Identifiant unique de l'appareil</strong> (Android ID, IDFV) – pour la sécurité et la prévention de la fraude.</li>
+        <li><strong>Modèle d'appareil, système d'exploitation, version de l'application</strong> – pour optimiser la compatibilité.</li>
+        <li><strong>Adresse IP</strong> – pour la géolocalisation approximative et la sécurité des connexions.</li>
+        <li><strong>Journaux d'erreurs et d'activité</strong> – pour diagnostiquer et résoudre les problèmes techniques.</li>
+      </ul>
+      <div class="highlight">
+        <p><i class="fas fa-info-circle"></i> <strong>Transparence :</strong> Toutes les données sont collectées sur une base volontaire ou nécessaire à l'exécution du contrat (commande). Vous pouvez refuser certaines collectes, mais cela peut limiter certaines fonctionnalités.</p>
+      </div>
+    </section>
+
+    <!-- 2. BASE LÉGALE -->
+    <section id="legal-basis">
+      <h2><i class="fas fa-gavel"></i> Base légale du traitement (RGPD)</h2>
+      <p>Conformément au RGPD, nous traitons vos données personnelles sur l'une des bases légales suivantes :</p>
+      <ul>
+        <li><strong>L'exécution d'un contrat</strong> (Art. 6-1-b) : traitement de votre commande, livraison, service client.</li>
+        <li><strong>Votre consentement explicite</strong> (Art. 6-1-a) : géolocalisation précise, envoi d'offres promotionnelles, partage de données avec des partenaires marketing.</li>
+        <li><strong>Notre intérêt légitime</strong> (Art. 6-1-f) : amélioration de l'application, prévention de la fraude, analyses statistiques (dans la limite de vos droits).</li>
+        <li><strong>Une obligation légale</strong> (Art. 6-1-c) : conservation des données de facturation conformément à la législation fiscale.</li>
+      </ul>
+    </section>
+
+    <!-- 3. UTILISATION -->
+    <section id="info-usage">
+      <h2><i class="fas fa-cogs"></i> Comment nous utilisons vos données</h2>
+      <p>Nous utilisons vos informations pour :</p>
+      <ul>
+        <li><i class="fas fa-check-circle" style="color:var(--success);"></i> <strong>Traiter et livrer vos commandes</strong> – mise en relation avec les restaurants et les livreurs.</li>
+        <li><i class="fas fa-check-circle" style="color:var(--success);"></i> <strong>Assurer le suivi en temps réel</strong> – localisation du livreur et notifications de statut.</li>
+        <li><i class="fas fa-check-circle" style="color:var(--success);"></i> <strong>Personnaliser votre expérience</strong> – recommandations de restaurants et offres basées sur vos préférences.</li>
+        <li><i class="fas fa-check-circle" style="color:var(--success);"></i> <strong>Communiquer avec vous</strong> – e-mails de confirmation, sondages de satisfaction, alertes importantes.</li>
+        <li><i class="fas fa-check-circle" style="color:var(--success);"></i> <strong>Améliorer et sécuriser le service</strong> – analyses de performance, correction de bugs, prévention des activités frauduleuses.</li>
+        <li><i class="fas fa-check-circle" style="color:var(--success);"></i> <strong>Respecter nos obligations légales</strong> – facturation, lutte contre le blanchiment.</li>
+      </ul>
+    </section>
+
+    <!-- 4. TIERS -->
+    <section id="third-parties">
+      <h2><i class="fas fa-handshake"></i> Partage avec des tiers</h2>
+      <p>Nous ne vendons ni ne louons vos données personnelles. Nous partageons uniquement les informations strictement nécessaires avec les catégories de tiers suivantes :</p>
+      <div class="third-party-grid">
+        <div class="third-party-card">
+          <h4><i class="fas fa-truck"></i> Services de livraison</h4>
+          <p>Nos livreurs partenaires reçoivent votre nom, numéro de téléphone et adresse de livraison pour acheminer votre commande.</p>
+        </div>
+        <div class="third-party-card">
+          <h4><i class="fas fa-credit-card"></i> Paiements</h4>
+          <p><strong>Stripe</strong> et <strong>PayPal</strong> traitent les transactions. Nous ne stockons pas vos données bancaires complètes.</p>
+        </div>
+        <div class="third-party-card">
+          <h4><i class="fas fa-chart-line"></i> Analyses et performance</h4>
+          <p><strong>Google Analytics</strong> et <strong>Firebase</strong> nous aident à comprendre l'utilisation de l'application (données anonymisées).</p>
+        </div>
+        <div class="third-party-card">
+          <h4><i class="fas fa-bell"></i> Notifications push</h4>
+          <p><strong>Firebase Cloud Messaging</strong> (FCM) – pour vous envoyer des notifications de statut de commande.</p>
+        </div>
+        <div class="third-party-card">
+          <h4><i class="fas fa-map"></i> Cartographie</h4>
+          <p><strong>Google Maps / Mapbox</strong> – pour l'affichage des cartes et le suivi des livreurs.</p>
+        </div>
+        <div class="third-party-card">
+          <h4><i class="fas fa-envelope"></i> E-mails transactionnels</h4>
+          <p><strong>SendGrid</strong> ou <strong>Mailjet</strong> – pour l'envoi des confirmations et reçus.</p>
+        </div>
+      </div>
+      <p>Chacun de ces partenaires est soumis à des clauses contractuelles strictes garantissant la confidentialité et la sécurité de vos données.</p>
+    </section>
+
+    <!-- 5. PERMISSIONS -->
+    <section id="permissions">
+      <h2><i class="fas fa-key"></i> Permissions demandées</h2>
+      <p>Pour offrir une expérience complète, MikaFood peut vous demander l'accès à :</p>
+      <div class="permission-grid">
+        <div class="permission-card">
+          <i class="fas fa-map-pin"></i>
+          <h4>Localisation</h4>
+          <p>Suivi du livreur et suggestions de restaurants à proximité</p>
+        </div>
+        <div class="permission-card">
+          <i class="fas fa-camera"></i>
+          <h4>Appareil photo</h4>
+          <p>Scanner un QR code de commande ou ajouter une photo de plat</p>
+        </div>
+        <div class="permission-card">
+          <i class="fas fa-microphone-alt"></i>
+          <h4>Microphone</h4>
+          <p>Contacter le support via un appel vocal (optionnel)</p>
+        </div>
+        <div class="permission-card">
+          <i class="fas fa-folder-open"></i>
+          <h4>Stockage</h4>
+          <p>Télécharger des photos ou captures de reçus</p>
+        </div>
+        <div class="permission-card">
+          <i class="fas fa-bell"></i>
+          <h4>Notifications</h4>
+          <p>Recevoir des alertes sur l'état de votre commande</p>
+        </div>
+      </div>
+      <p>Vous pouvez révoquer ces permissions à tout moment dans les paramètres de votre appareil. Aucune fonctionnalité essentielle ne sera bloquée, mais certaines options seront désactivées.</p>
+    </section>
+
+    <!-- 6. COOKIES -->
+    <section id="cookies">
+      <h2><i class="fas fa-cookie-bite"></i> Cookies et technologies de suivi</h2>
+      <p>Nous utilisons des cookies et des technologies similaires pour :</p>
+      <ul>
+        <li><strong>Authentifier</strong> votre session et maintenir votre connexion.</li>
+        <li><strong>Mémoriser</strong> vos préférences (langue, adresses favorites).</li>
+        <li><strong>Analyser</strong> l'audience et le comportement des utilisateurs (via Google Analytics) de manière anonyme.</li>
+        <li><strong>Proposer</strong> des publicités personnalisées (uniquement avec votre consentement).</li>
+      </ul>
+      <p>Vous pouvez gérer vos préférences en matière de cookies directement depuis les paramètres de votre navigateur ou de l'application. Nous n'utilisons pas de cookies tiers à des fins de reciblage sans votre accord explicite.</p>
+    </section>
+
+    <!-- 7. STOCKAGE & SÉCURITÉ -->
+    <section id="data-storage">
+      <h2><i class="fas fa-shield-alt"></i> Stockage &amp; sécurité</h2>
+      <p>Vos données sont hébergées sur des serveurs sécurisés situés dans l'Union européenne (hébergeur certifié ISO 27001). Nous mettons en œuvre les mesures suivantes :</p>
+      <ul>
+        <li><strong>Chiffrement TLS/SSL</strong> pour toutes les transmissions de données.</li>
+        <li><strong>Chiffrement AES-256</strong> pour les données stockées au repos.</li>
+        <li><strong>Contrôle d'accès strict</strong> – seuls les employés autorisés ont accès aux données, et ce, dans le cadre de leurs fonctions.</li>
+        <li><strong>Audits de sécurité réguliers</strong> et tests d'intrusion.</li>
+        <li><strong>Journalisation des accès</strong> pour détecter toute activité suspecte.</li>
+      </ul>
+      <div class="highlight">
+        <p><i class="fas fa-lock"></i> <strong>Engagement :</strong> En cas de violation de données, nous vous informerons dans les 72 heures conformément au RGPD, ainsi que les autorités compétentes.</p>
+      </div>
+    </section>
+
+    <!-- 8. CONSERVATION -->
+    <section id="retention">
+      <h2><i class="fas fa-clock"></i> Durée de conservation des données</h2>
+      <p>Nous conservons vos données uniquement pendant la durée nécessaire aux finalités décrites, ou pour répondre à des obligations légales. Les durées sont les suivantes :</p>
+      <ul>
+        <li><strong>Données de compte (nom, email, téléphone)</strong> – jusqu'à la suppression de votre compte.</li>
+        <li><strong>Historique des commandes</strong> – 3 ans à des fins d'analyse et de service client, puis archivage anonyme.</li>
+        <li><strong>Données de localisation précise</strong> – conservées temporairement pendant la durée de la livraison, puis supprimées (sauf si vous activez le partage continu).</li>
+        <li><strong>Données de facturation et transactions</strong> – 10 ans conformément à la législation fiscale.</li>
+        <li><strong>Journaux d'activité techniques</strong> – 6 mois maximum.</li>
+      </ul>
+      <p>À l'issue de ces périodes, les données sont soit supprimées définitivement, soit rendues anonymes.</p>
+    </section>
+
+    <!-- 9. VOS DROITS -->
+    <section id="user-rights">
+      <h2><i class="fas fa-user-check"></i> Vos droits (RGPD / CCPA)</h2>
+      <p>Conformément à la réglementation, vous disposez des droits suivants sur vos données personnelles :</p>
+      <ul>
+        <li><strong>Droit d'accès</strong> – obtenir une copie de toutes les données que nous détenons sur vous.</li>
+        <li><strong>Droit de rectification</strong> – modifier ou corriger vos informations si elles sont inexactes.</li>
+        <li><strong>Droit à l'effacement</strong> (« droit à l'oubli ») – demander la suppression de vos données, sous réserve des obligations légales.</li>
+        <li><strong>Droit à la limitation</strong> – restreindre le traitement de vos données dans certains cas.</li>
+        <li><strong>Droit à la portabilité</strong> – recevoir vos données dans un format structuré et lisible.</li>
+        <li><strong>Droit d'opposition</strong> – vous opposer au traitement pour des motifs légitimes (notamment pour le marketing direct).</li>
+        <li><strong>Droit de retirer votre consentement</strong> – à tout moment, pour les traitements basés sur le consentement.</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous à l'adresse ci-dessous. Nous répondrons dans un délai maximum d'<strong>un mois</strong>.</p>
+    </section>
+
+    <!-- 10. ENFANTS -->
+    <section id="children">
+      <h2><i class="fas fa-child"></i> Protection des enfants (COPPA)</h2>
+      <p>MikaFood ne s'adresse pas aux enfants de moins de <strong>13 ans</strong> (ou 16 ans dans certaines juridictions). Nous ne collectons pas sciemment de données personnelles provenant de mineurs. Si nous découvrons qu'un enfant nous a fourni des données, nous les supprimerons immédiatement.</p>
+      <div class="highlight">
+        <p><i class="fas fa-shield-child"></i> Si vous êtes parent ou tuteur et pensez que votre enfant nous a fourni des données, veuillez nous contacter immédiatement.</p>
+      </div>
+    </section>
+
+    <!-- 11. TRANSFERTS INTERNATIONAUX -->
+    <section id="international">
+      <h2><i class="fas fa-globe"></i> Transferts internationaux de données</h2>
+      <p>Vos données peuvent être transférées vers des pays en dehors de l'Union européenne (par exemple, les États-Unis) via l'utilisation de services comme Google ou Stripe. Dans ce cas, nous nous assurons que des garanties appropriées sont en place :</p>
+      <ul>
+        <li><strong>Clauses contractuelles types (CCT)</strong> de l'UE.</li>
+        <li><strong>Certification Privacy Shield</strong> (pour les transferts vers les États-Unis, le cas échéant).</li>
+        <li><strong>Niveau de protection adéquat</strong> selon la Commission européenne.</li>
+      </ul>
+    </section>
+
+    <!-- 12. SUPPRESSION -->
+    <section id="account-deletion">
+      <h2><i class="fas fa-user-times"></i> Suppression du compte et des données</h2>
+      <p>Vous pouvez demander la suppression définitive de votre compte MikaFood et de toutes les données associées :</p>
+      <ol>
+        <li><strong>Depuis l'application</strong> : <em>Mon compte → Paramètres → Supprimer mon compte</em> (procédure sécurisée avec confirmation).</li>
+        <li><strong>Par e-mail</strong> : cliquez sur le bouton ci-dessous ou envoyez un message à <a href="mailto:suppression@mikafood.com">suppression@mikafood.com</a>.</li>
+      </ol>
+      <a class="btn-delete" href="mailto:suppression@mikafood.com?subject=Demande%20de%20suppression%20de%20compte%20MikaFood">
+        <i class="fas fa-trash-alt"></i> Demander la suppression
+      </a>
+      <p style="margin-top: 16px;">Après vérification de votre identité (pour éviter les demandes frauduleuses), vos données seront effacées dans un délai maximum de <strong>30 jours</strong>, sauf si une obligation légale (fiscale, comptable) impose une conservation plus longue. Dans ce cas, les données strictement nécessaires seront conservées et verrouillées.</p>
+    </section>
+
+    <!-- 13. MISES À JOUR -->
+    <section id="updates">
+      <h2><i class="fas fa-edit"></i> Mises à jour de la politique</h2>
+      <p>Nous pouvons modifier cette politique de confidentialité pour refléter les évolutions de nos pratiques ou de la réglementation. Toute modification sera notifiée :</p>
+      <ul>
+        <li>Par une notification dans l'application.</li>
+        <li>Par un e-mail aux utilisateurs actifs (en cas de changement majeur).</li>
+        <li>Par la mise à jour de la date de « Dernière mise à jour » en haut de ce document.</li>
+      </ul>
+      <p>Nous vous encourageons à consulter régulièrement cette page. La poursuite de l'utilisation de MikaFood après la publication des modifications vaut acceptation de celles-ci.</p>
+    </section>
+
+    <!-- 14. CONTACT -->
+    <section id="contact">
+      <h2><i class="fas fa-envelope"></i> Nous contacter</h2>
+      <p>Pour toute question concernant cette politique, l'exercice de vos droits, ou pour toute demande relative à vos données, notre Délégué à la Protection des Données (DPO) est à votre disposition :</p>
+      <div class="contact-info">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:dpo@mikafood.com">dpo@mikafood.com</a>
+        <span style="margin-left: auto; font-size: 0.9em; color: #666;">Réponse sous 48h</span>
+      </div>
+      <div class="contact-info">
+        <i class="fas fa-phone"></i>
+        <span>+33 1 23 45 67 89 (du lundi au vendredi, 9h-18h)</span>
+      </div>
+      <div class="contact-info">
+        <i class="fas fa-map-pin"></i>
+        <span>MikaFood SAS, 10 Rue des Saveurs, 75001 Paris, France</span>
+      </div>
+      <p>Vous avez également le droit d'introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) si vous estimez que vos droits ne sont pas respectés.</p>
+    </section>
+
+  </div>
+
+  <!-- Pied de page -->
+  <footer>
+    <p>&copy; 2026 MikaFood – Tous droits réservés.</p>
+    <div class="footer-tagline">
+      <span><i class="fas fa-handshake"></i> Confiance</span>
+      <span><i class="fas fa-shield-alt"></i> Sécurité</span>
+      <span><i class="fas fa-eye"></i> Transparence</span>
+      <span><i class="fas fa-utensils"></i> Savourer en paix</span>
+    </div>
+  </footer>
+
+</body>
+</html>
